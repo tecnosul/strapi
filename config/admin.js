@@ -9,5 +9,7 @@ module.exports = ({ env }) => ({
     token: {
       salt: env('TRANSFER_TOKEN_SALT'),
     }
-  }
+  },
+  locales: ['pt-BR'], // Adicione os idiomas que você deseja suportar
+  language: 'pt-BR', // Defina o idioma padrão aqui
 });
