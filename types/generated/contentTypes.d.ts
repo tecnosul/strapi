@@ -788,6 +788,72 @@ export interface PluginI18NLocale extends Schema.CollectionType {
   };
 }
 
+export interface ApiFilmaQueGanhaArtigoFilmaQueGanhaArtigo
+  extends Schema.CollectionType {
+  collectionName: 'filma_que_ganha_artigos';
+  info: {
+    singularName: 'filma-que-ganha-artigo';
+    pluralName: 'filma-que-ganha-artigos';
+    displayName: 'Filma que Ganha - Artigos';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String & Attribute.Required;
+    content: Attribute.RichText & Attribute.Required;
+    picture: Attribute.Media;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::filma-que-ganha-artigo.filma-que-ganha-artigo',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::filma-que-ganha-artigo.filma-que-ganha-artigo',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiFilmaQueGanhaPremioFilmaQueGanhaPremio
+  extends Schema.CollectionType {
+  collectionName: 'filma_que_ganha_premios';
+  info: {
+    singularName: 'filma-que-ganha-premio';
+    pluralName: 'filma-que-ganha-premios';
+    displayName: 'Filma que Ganha - Premios';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String & Attribute.Required & Attribute.Unique;
+    description: Attribute.Text & Attribute.Required;
+    picture: Attribute.Media & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::filma-que-ganha-premio.filma-que-ganha-premio',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::filma-que-ganha-premio.filma-que-ganha-premio',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -806,6 +872,8 @@ declare module '@strapi/types' {
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'plugin::i18n.locale': PluginI18NLocale;
+      'api::filma-que-ganha-artigo.filma-que-ganha-artigo': ApiFilmaQueGanhaArtigoFilmaQueGanhaArtigo;
+      'api::filma-que-ganha-premio.filma-que-ganha-premio': ApiFilmaQueGanhaPremioFilmaQueGanhaPremio;
     }
   }
 }

@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "filma_que_ganha_artigos",
+  "info": {
+    "singularName": "filma-que-ganha-artigo",
+    "pluralName": "filma-que-ganha-artigos",
+    "displayName": "Filma que Ganha - Artigos"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "content": {
+      "type": "richtext",
+      "required": true
+    },
+    "picture": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

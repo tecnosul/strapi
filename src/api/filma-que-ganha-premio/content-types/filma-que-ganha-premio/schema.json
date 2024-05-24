@@ -1,0 +1,35 @@
+{
+  "kind": "collectionType",
+  "collectionName": "filma_que_ganha_premios",
+  "info": {
+    "singularName": "filma-que-ganha-premio",
+    "pluralName": "filma-que-ganha-premios",
+    "displayName": "Filma que Ganha - Premios"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    },
+    "picture": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    }
+  }
+}
