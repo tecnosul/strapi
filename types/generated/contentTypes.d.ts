@@ -854,6 +854,38 @@ export interface ApiFilmaQueGanhaPremioFilmaQueGanhaPremio
   };
 }
 
+export interface ApiFilmaQueGanhaReativacaoFilmaQueGanhaReativacao
+  extends Schema.CollectionType {
+  collectionName: 'filma_que_ganha_reativacaos';
+  info: {
+    singularName: 'filma-que-ganha-reativacao';
+    pluralName: 'filma-que-ganha-reativacaos';
+    displayName: 'Filma que Ganha - Reativa\u00E7\u00E3o';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    description: Attribute.Text;
+    file: Attribute.Media & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::filma-que-ganha-reativacao.filma-que-ganha-reativacao',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::filma-que-ganha-reativacao.filma-que-ganha-reativacao',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -874,6 +906,7 @@ declare module '@strapi/types' {
       'plugin::i18n.locale': PluginI18NLocale;
       'api::filma-que-ganha-artigo.filma-que-ganha-artigo': ApiFilmaQueGanhaArtigoFilmaQueGanhaArtigo;
       'api::filma-que-ganha-premio.filma-que-ganha-premio': ApiFilmaQueGanhaPremioFilmaQueGanhaPremio;
+      'api::filma-que-ganha-reativacao.filma-que-ganha-reativacao': ApiFilmaQueGanhaReativacaoFilmaQueGanhaReativacao;
     }
   }
 }

@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "filma_que_ganha_reativacaos",
+  "info": {
+    "singularName": "filma-que-ganha-reativacao",
+    "pluralName": "filma-que-ganha-reativacaos",
+    "displayName": "Filma que Ganha - Reativação"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "description": {
+      "type": "text"
+    },
+    "file": {
+      "allowedTypes": [
+        "images",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    }
+  }
+}
