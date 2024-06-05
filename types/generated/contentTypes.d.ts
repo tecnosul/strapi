@@ -861,6 +861,7 @@ export interface ApiFilmaQueGanhaReativacaoFilmaQueGanhaReativacao
     singularName: 'filma-que-ganha-reativacao';
     pluralName: 'filma-que-ganha-reativacaos';
     displayName: 'Filma que Ganha - Reativa\u00E7\u00E3o';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -868,6 +869,7 @@ export interface ApiFilmaQueGanhaReativacaoFilmaQueGanhaReativacao
   attributes: {
     description: Attribute.Text;
     file: Attribute.Media & Attribute.Required;
+    title: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

@@ -4,7 +4,8 @@
   "info": {
     "singularName": "filma-que-ganha-reativacao",
     "pluralName": "filma-que-ganha-reativacaos",
-    "displayName": "Filma que Ganha - Reativação"
+    "displayName": "Filma que Ganha - Reativação",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -15,14 +16,17 @@
       "type": "text"
     },
     "file": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
       "allowedTypes": [
         "images",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false,
-      "required": true
+      ]
+    },
+    "title": {
+      "type": "string"
     }
   }
 }
