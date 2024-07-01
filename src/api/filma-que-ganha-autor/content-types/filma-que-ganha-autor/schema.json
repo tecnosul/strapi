@@ -1,0 +1,29 @@
+{
+  "kind": "collectionType",
+  "collectionName": "filma_que_ganha_autores",
+  "info": {
+    "singularName": "filma-que-ganha-autor",
+    "pluralName": "filma-que-ganha-autores",
+    "displayName": "Filma que Ganha - Autores"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "bio": {
+      "type": "text"
+    },
+    "picture": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

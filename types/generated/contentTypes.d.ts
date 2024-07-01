@@ -795,6 +795,7 @@ export interface ApiFilmaQueGanhaArtigoFilmaQueGanhaArtigo
     singularName: 'filma-que-ganha-artigo';
     pluralName: 'filma-que-ganha-artigos';
     displayName: 'Filma que Ganha - Artigos';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -803,6 +804,11 @@ export interface ApiFilmaQueGanhaArtigoFilmaQueGanhaArtigo
     title: Attribute.String & Attribute.Required;
     content: Attribute.RichText & Attribute.Required;
     picture: Attribute.Media;
+    author: Attribute.Relation<
+      'api::filma-que-ganha-artigo.filma-que-ganha-artigo',
+      'oneToOne',
+      'api::filma-que-ganha-autor.filma-que-ganha-autor'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -814,6 +820,39 @@ export interface ApiFilmaQueGanhaArtigoFilmaQueGanhaArtigo
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::filma-que-ganha-artigo.filma-que-ganha-artigo',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiFilmaQueGanhaAutorFilmaQueGanhaAutor
+  extends Schema.CollectionType {
+  collectionName: 'filma_que_ganha_autores';
+  info: {
+    singularName: 'filma-que-ganha-autor';
+    pluralName: 'filma-que-ganha-autores';
+    displayName: 'Filma que Ganha - Autores';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    name: Attribute.String & Attribute.Required;
+    bio: Attribute.Text;
+    picture: Attribute.Media;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::filma-que-ganha-autor.filma-que-ganha-autor',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::filma-que-ganha-autor.filma-que-ganha-autor',
       'oneToOne',
       'admin::user'
     > &
@@ -907,6 +946,7 @@ declare module '@strapi/types' {
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'plugin::i18n.locale': PluginI18NLocale;
       'api::filma-que-ganha-artigo.filma-que-ganha-artigo': ApiFilmaQueGanhaArtigoFilmaQueGanhaArtigo;
+      'api::filma-que-ganha-autor.filma-que-ganha-autor': ApiFilmaQueGanhaAutorFilmaQueGanhaAutor;
       'api::filma-que-ganha-premio.filma-que-ganha-premio': ApiFilmaQueGanhaPremioFilmaQueGanhaPremio;
       'api::filma-que-ganha-reativacao.filma-que-ganha-reativacao': ApiFilmaQueGanhaReativacaoFilmaQueGanhaReativacao;
     }

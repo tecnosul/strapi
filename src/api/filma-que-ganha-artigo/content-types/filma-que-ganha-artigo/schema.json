@@ -4,7 +4,8 @@
   "info": {
     "singularName": "filma-que-ganha-artigo",
     "pluralName": "filma-que-ganha-artigos",
-    "displayName": "Filma que Ganha - Artigos"
+    "displayName": "Filma que Ganha - Artigos",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -20,14 +21,20 @@
       "required": true
     },
     "picture": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
+    },
+    "author": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::filma-que-ganha-autor.filma-que-ganha-autor"
     }
   }
 }
